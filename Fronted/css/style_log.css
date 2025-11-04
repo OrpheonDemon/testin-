@@ -1,0 +1,176 @@
+:root {
+    --color1: #4a090a;
+    --color2: #812007;
+    --color3: #1f77ce;
+    --color4: #d1e3ed;
+    --color5: #f8efed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color1);
+    color: #fff;
+    position: relative;
+}
+
+#app{
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition:  all .5s ease-out;
+}
+
+.container-form {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition:  all .5s ease-out;
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.message h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: var(--color3);
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover {
+    background-color: #175b9e;
+}
+
+.formulario {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: var(--color5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: #222;
+}
+
+.create-account {
+    padding: 15px;
+    font-size: 1.7rem;
+}
+
+
+.formulario input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    background-color: var(--color5);
+    border: none;
+    border-bottom: rgb(14, 13, 13) thin solid;
+    text-align: center;
+    outline: none;
+    padding: 0.1rem 0;
+    font-size: .9rem;
+    color: #222;
+}
+
+.formulario input::placeholder {
+    color: rgba(15, 15, 15, 0.7);
+}
+
+.formulario button {
+    width: 70%;
+    color: #fff;
+    border: solid thin white;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: var(--color3);
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    transition: 0.5s;
+}
+
+.formulario button:hover {
+    background-color: #175b9e;
+    scale: 1.1;
+}
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ==== Estilo general del select ==== */
+select {
+    width: 70%;                
+    padding: 10px 12px;         
+    padding: 10px 12px;   
+    border-radius: 8px;                
+    text-align: center;
+    transition: all 0.3s ease;  
+    appearance: none;            
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* ==== Hover y focus ==== */
+select:hover, select:focus {
+    border-color: var(--color3);
+    box-shadow: 0 0 5px var(--color3);
+    outline: none;
+}
+
+
+@keyframes fadeInSelect {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

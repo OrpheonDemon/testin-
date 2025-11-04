@@ -1,0 +1,148 @@
+:root {
+    --color1: #4a090a;
+    --color2: #812007;
+    --color3: #1f77ce;
+    --color4: #d1e3ed;
+    --color5: #f8efed;
+}
+
+/* ==== Reset básico ==== */
+* {
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeInBody 0.6s ease forwards;
+}
+
+/* ==== Contenedor principal ==== */
+.main-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* para pantallas pequeñas se apilen */
+    width: 100%;
+}
+
+/* ==== Formulario ==== */
+.container {
+    background-color: var(--color5);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    animation: fadeInContainer 0.6s ease forwards;
+    flex: 1 1 400px;
+}
+
+/* ==== Div ejemplos ==== */
+.ejemplos {
+    background-color: var(--color5);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    flex: 1 1 400px;
+    text-align: center;
+    animation: fadeInContainer 0.6s ease forwards;
+}
+
+.ejemplos h1, .ejemplos h2 {
+    color: var(--color1);
+    margin-bottom: 5px;
+}
+
+.ejemplos img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.ejemplos p {
+    color: var(--color2);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--color1);
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--color2);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* ==== Formulario ==== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    color: var(--color1);
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--color2);
+    background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    border-color: var(--color3);
+    box-shadow: 0 0 5px var(--color3);
+}
+
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color3);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ==== Mensaje adicional ==== */
+.info {
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--color1);
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,208 @@
+:root {
+    --color1: #4a090a;
+    --color2: #812007;
+    --color3: #1f77ce;
+    --color4: #d1e3ed;
+    --color5: #f8efed;
+}
+/* comprobar_user.php estilos */
+.aprobaciones {
+    width: 90%;
+    height: 80vh;
+    margin: 20px auto;
+    border-radius: 10px;
+    background: linear-gradient(to top, #d1e3ed, #f8efed);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 20px;
+    text-align: left;
+}
+
+.grid-usuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 0.5fr));
+    gap: 20px;
+}
+
+.card-usuario {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card-usuario:hover {
+    transform: translateY(-5px);
+}
+
+.card-usuario h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-usuario p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.btn-abrir {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: var(--color3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-abrir:hover {
+    background-color: var(--color2);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.modal-content {
+    background-color: var(--color5);
+    margin: 80px auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    max-width: 700px;
+    width: 90%;
+    height: 85%;
+    position: relative;
+    overflow-y: auto;
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==== Botón cerrar ==== */
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color1);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+    color: var(--color2);
+}
+
+.modal h2 {
+    color: var(--color1);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.modal h3 {
+    color: var(--color3);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modal p {
+    color: var(--color2);
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+
+.verificaciones-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.verificacion-item {
+    width: 48%;
+    text-align: center;
+}
+
+.verificacion-item h4 {
+    margin-bottom: 5px;
+}
+
+.modal select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--color2);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.modal select:hover, .modal select:focus {
+    border-color: var(--color3);
+    box-shadow: 0 0 5px var(--color3);
+    outline: none;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.modal-buttons button[name="aprobar"] {
+    background-color: var(--color3);
+}
+
+.modal-buttons button[name="aprobar"]:hover {
+    background-color: var(--color2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.modal-buttons button[name="cancelar"] {
+    background-color: var(--color2);
+}
+
+.modal-buttons button[name="cancelar"]:hover {
+    background-color: var(--color3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

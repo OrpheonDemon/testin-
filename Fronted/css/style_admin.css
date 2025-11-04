@@ -1,0 +1,259 @@
+:root {
+    --color1: #4a090a;
+    --color2: #812007;
+    --color3: #1f77ce;
+    --color4: #d1e3ed;
+    --color5: #f8efed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(#F1F3FF, #CBD4FF);
+}
+
+.sidebar {
+  height: 100%;
+  width: 180px;
+  position: absolute;
+  background-color: #fff;
+  transition: 0.5s ease;
+  transform: translateX(-180px);
+  z-index: 999;
+}
+
+.sidebar h1 {
+  color: #072c8f;
+  font-weight: 800;
+  text-align: right;
+  padding: 10px 0;
+  padding-right: 40px;
+  pointer-events: none;
+}
+
+.sidebar ul li {
+  list-style: none;
+}
+
+.sidebar ul li a {
+  color: #00102b;
+  font-weight: 500;
+  padding: 10px 5px;
+  display: flex;
+  gap: 20px;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+.sidebar ul li a span {
+  width: 40px;
+  text-align: center;
+}
+
+
+/* 🔹 SOLO ocultamos el checkbox del menú */
+.menu-toggle {
+  display: none;
+  visibility: hidden;
+}
+
+.toggle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 20px;
+  left: 15px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.toggle .common {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #072c8f;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.toggle .top_line {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .middle_line {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle .bottom_line {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 🔹 Animaciones cuando está checked */
+.menu-toggle:checked~.toggle .top_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle:checked~.toggle .bottom_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg);
+}
+
+.menu-toggle:checked~.toggle .middle_line {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.menu-toggle:checked~.sidebar {
+  transform: translateX(0);
+}
+
+.dropdown-menu {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+    background-color: #f8efed;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 10px;
+    color: #4a090a;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #812007;
+    color: #fff;
+}
+
+.dropdown-icon {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-container.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+
+/**/
+
+.main {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 40px;
+}
+
+.topbar .left img.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.topbar .left h2 {
+  font-size: 18px;
+  color: #444;
+}
+
+.topbar .right .date {
+  font-size: 14px;
+  color: #666;
+}
+
+.contenido {
+  justify-content: center;
+  align-items: center;
+}
+
+.principal {
+  width: 90%;
+  height: 80vh;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background: linear-gradient(to top, #d1e3ed, #f8efed);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.principal div {
+  max-width: 500px;
+}
+
+.principal img {
+  width: 350px;
+  max-height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.principal img:hover {
+  transform: scale(1.05);
+}
+
+.principal h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.principal p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 500px;
+  padding: 13px;
+  border-radius: 10px;
+
+}
